@@ -1,20 +1,20 @@
 class Ff < Formula
   desc "A blazing-fast TUI file finder with fuzzy search, ranking, and IDE integration"
   homepage "https://github.com/anthonyamaro15/file-finder-rust"
-  version "0.1.10"
+  version "0.1.11"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.1.10/ff-aarch64-apple-darwin.tar.gz"
-      sha256 "c7a61d376525d2f0add5173534b01295a757ab3b454f52b28ae04b28e3004a0d"
+      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.1.11/ff-aarch64-apple-darwin.tar.gz"
+      sha256 "dc8e1d8ed3f3ee912b80922a2248616985e7625382b7e236a0c56cfa03e6c369"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.1.10/ff-x86_64-apple-darwin.tar.gz"
-      sha256 "cf66b5de10bcb5135b3ece5dedd5fa32353bdb6c6ae93d465a8d3f819adb2c9d"
+      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.1.11/ff-x86_64-apple-darwin.tar.gz"
+      sha256 "6a90bee7321caa9b5fc2e2066983fa4829b3c344baf9648015361e1ebb8af5ad"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.1.10/ff-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b6552b11e98582948fb9761b3145134e867cad1a556aca00d591fa18ac754c64"
+    url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.1.11/ff-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "e7d09c5b0f9accdf82bb04533150cb5a47b6de2a715710430e3cb563e3c13aba"
   end
   license "MIT"
 
@@ -40,9 +40,15 @@ class Ff < Formula
   end
 
   def install
-    bin.install "ff" if OS.mac? && Hardware::CPU.arm?
-    bin.install "ff" if OS.mac? && Hardware::CPU.intel?
-    bin.install "ff" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "ff"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "ff"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "ff"
+    end
 
     install_binary_aliases!
 
