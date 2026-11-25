@@ -1,20 +1,20 @@
 class Ff < Formula
   desc "A blazing-fast TUI file finder with fuzzy search, ranking, and IDE integration"
   homepage "https://github.com/anthonyamaro15/file-finder-rust"
-  version "0.3.0"
+  version "0.3.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.3.0/ff-aarch64-apple-darwin.tar.gz"
-      sha256 "3f730d3ec811010c56d32f1f0f7b741051782bbaf41049f4b8cef5592ce9eaa1"
+      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.3.1/ff-aarch64-apple-darwin.tar.gz"
+      sha256 "b1cd74ab11e1ef7d51b907b6702084de79bc5cd922e8096db10bdedb0cea1011"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.3.0/ff-x86_64-apple-darwin.tar.gz"
-      sha256 "4ca6cbc5da3503276da5962a09ec9be315b87bf2ec2ab6229131ee5169a1144d"
+      url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.3.1/ff-x86_64-apple-darwin.tar.gz"
+      sha256 "e01903255837cdbf6d8dc6fd3825ff473fe38e06efc2ac1d7d1fcc634be8ac89"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.3.0/ff-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "b64ecb2eb43638a28e7fce7131f3eb407e629aff6e76fec0c6b775cf9d116220"
+    url "https://github.com/anthonyamaro15/file-finder-rust/releases/download/v0.3.1/ff-x86_64-unknown-linux-gnu.tar.gz"
+    sha256 "a3a5783a9f37eb69ede90993a3b631e6a5f1340d9be421bdf91d4606f68e5ccf"
   end
   license "MIT"
 
